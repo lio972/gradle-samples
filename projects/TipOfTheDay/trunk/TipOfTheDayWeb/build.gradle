@@ -4,6 +4,12 @@ sourceCompatibility = '1.5'
 targetCompatibility = '1.5'
 
 dependencies {
+
+	compile ':tapestry-core:5.0.18'
+	compile ':tapestry-ioc:5.0.18'
+	compile ':tapestry5-annotations:5.0.18'
+	
+	runtime ':javassist:3.8.0.GA'
 	
 	providedCompile 'org.apache.geronimo.specs:geronimo-servlet_2.5_spec:1.2'
 	providedCompile 'org.slf4j:slf4j-api:1.4.3'

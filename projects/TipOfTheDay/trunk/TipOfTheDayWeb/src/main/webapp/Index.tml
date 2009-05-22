@@ -3,7 +3,7 @@
         <title>Tip Of The Day</title>
     </head>
     <body>
-        <h1>Tip Of The Day</h1>
+        <h1>${tipOfTheDay.title}</h1>
         <p>${tipOfTheDay.text}</p>
     </body>
 </html>

@@ -14,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.googlecode.gradlesamples.tipoftheday.ejb.TipOfTheDayBeanLocal;
+import com.googlecode.gradlesamples.tipoftheday.ejb.TipOfTheDayVO;
 
 /**
  * Servlet implementation class TipOfTheDayServlet
@@ -49,7 +50,9 @@ public class TipOfTheDayServlet extends HttpServlet {
 		}
 		
 		if (bean != null) {
-			writer.print(bean.nextTip().getText());
+			TipOfTheDayVO tip = bean.nextTip();
+			writer.print("<h1>" + tip.getTitle() + "</h1>");
+			writer.print("<p>" + tip.getText() + "</p>");
 		}
 
 		writer.flush();

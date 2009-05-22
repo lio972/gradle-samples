@@ -13,5 +13,20 @@
             <dependent-object/>
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module deploy-path="/" handle="module:/classpath/lib/TipOfTheDayBuild/deps/ezmorph-1.0.6.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/" handle="module:/classpath/lib/TipOfTheDayBuild/deps/commons-lang-2.4.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/" handle="module:/classpath/lib/TipOfTheDayBuild/deps/commons-collections-3.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/" handle="module:/classpath/lib/TipOfTheDayBuild/deps/commons-beanutils-1.7.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/" handle="module:/classpath/lib/TipOfTheDayBuild/deps/json-lib-2.2.3.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
     </wb-module>
 </project-modules>
