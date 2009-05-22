@@ -21,7 +21,7 @@ public class TipOfTheDayBean implements TipOfTheDayBeanLocal {
     }
     
     public TipOfTheDayVO nextTip() {
-		TipOfTheDayVO tip = new TipOfTheDayVO("Tip");
+		TipOfTheDayVO tip = new TipOfTheDayVO("Tip Of The Day");
 		logger.info(tip.getText());
 		return tip;
 	}

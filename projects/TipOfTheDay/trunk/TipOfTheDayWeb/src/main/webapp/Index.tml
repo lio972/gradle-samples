@@ -1,0 +1,9 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+    <head>
+        <title>Tip Of The Day</title>
+    </head>
+    <body>
+        <h1>Tip Of The Day</h1>
+        <p>${tipOfTheDay.text}</p>
+    </body>
+</html>
