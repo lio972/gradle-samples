@@ -3,14 +3,18 @@
 	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:application="http://java.sun.com/xml/ns/javaee/application_5.xsd"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_5.xsd"
 	id="Application_ID" version="5">
+	
 	<display-name>TipOfTheDayApp</display-name>
+	
 	<module>
 		<ejb>TipOfTheDayEJB.jar</ejb>
 	</module>
+	
 	<module>
 		<web>
 			<web-uri>TipOfTheDayWeb.war</web-uri>
 			<context-root>TipOfTheDay</context-root>
 		</web>
 	</module>
+	
 </application>
