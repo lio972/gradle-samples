@@ -1,0 +1,25 @@
+dependencies {
+	dependency(['ear': ['libs', 'ear']], project(':TipOfTheDayWeb'))
+	dependency(['ear': ['libs', 'ear']], project(':TipOfTheDayEJB'))
+	dependency(['ear': ['libs', 'ear']], project(':TipOfTheDayEJBClient'))
+}
+
+createTask('init') {
+	project.buildDir.mkdirs()
+}
+
+createTask('clean') {
+	GFileUtils.deleteDirectory(project.buildDir)
+}
+
+createTask('archive_ear', dependsOn:['init', ':TipOfTheDayEJB:uploadInternalLibs', ':TipOfTheDayWeb:uploadInternalLibs']) {
+	// TODO what if manifest is already available in project sources, see Ant EAR task docs
+	ant.ear(destfile:project.buildDir.absolutePath + '/TipOfTheDayApp-' + version + '.ear', appxml:project.projectDir.absolutePath +'/src/main/resources/META-INF/application.xml') {
+		metainf(dir:project.projectDir.absolutePath + '/src/main/resources/META-INF') {
+			exclude(name:'application.xml')
+		}
+		project.dependencies.configuration('ear').resolve().each() {file ->
+			fileset(file:file.absolutePath)
+		}
+	};
+}

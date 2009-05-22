@@ -1,0 +1,21 @@
+usePlugin('java');
+
+sourceCompatibility = '1.5'
+targetCompatibility = '1.5'
+
+dependencies {
+	compile 'org.slf4j:slf4j-api:1.4.3'
+	compile 'org.apache.geronimo.specs:geronimo-ejb_3.0_spec:1.0.1'
+	
+	dependency(['compile':['default'], 'ear':['ear', 'libs']], project(':TipOfTheDayEJBClient'))
+}
+
+init.dependsOn('initManifest')
+
+createTask('initManifest', dependsOn:':TipOfTheDayEJBClient:uploadInternalLibs') {
+	classpath = ''
+	dependencies.ear.files.each() { file ->
+		classpath += file.name + ' '
+	}
+	manifest.mainAttributes('Class-Path':classpath)
+}

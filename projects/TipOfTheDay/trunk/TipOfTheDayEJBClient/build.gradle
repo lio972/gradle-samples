@@ -1,0 +1,10 @@
+usePlugin('java');
+
+sourceCompatibility = '1.5'
+targetCompatibility = '1.5'
+
+manifest.mainAttributes('Class-Path':'')
+
+dependencies {
+	compile 'org.apache.geronimo.specs:geronimo-ejb_3.0_spec:1.0.1'
+}

@@ -1,0 +1,22 @@
+allprojects() {
+
+	version = '1.0'
+	
+	createTask('cleanCache') { task ->
+		GFileUtils.deleteDirectory(new File(task.project.projectDir, '.gradle'))
+	}
+ 	 
+}
+
+subprojects {
+
+	dependencies {
+		addConfiguration('ear');
+		
+		dir = new File(project.projectDir, '../TipOfTheDayBuild/deps');
+		addFlatDirResolver('deps', dir.absolutePath)
+		
+		addMavenStyleRepo('geronimo', 'file:///I:/Work/Servers/geronimo/geronimo-tomcat6-javaee5-2.1.4/repository')
+	}
+	
+}
