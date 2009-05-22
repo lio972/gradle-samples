@@ -8,5 +8,5 @@
             <dep:type>car</dep:type>
         </dep:moduleId>
     </dep:environment>
-    <web:context-root>/TipOfTheDayWeb</web:context-root>
+    <web:context-root>/TipOfTheDay</web:context-root>
 </web:web-app>
