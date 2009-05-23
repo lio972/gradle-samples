@@ -6,7 +6,6 @@
 		<project>TipOfTheDayEJB</project>
 		<project>TipOfTheDayEJBClient</project>
 		<project>TipOfTheDayWeb</project>
-		<project>TipOfTheDayApp</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

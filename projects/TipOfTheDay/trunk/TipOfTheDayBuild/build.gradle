@@ -11,12 +11,24 @@ allprojects() {
 subprojects {
 
 	dependencies {
+		dir = new File(project.projectDir, '../TipOfTheDayBuild/deps');
+		
+		/*
+		classpathResolvers.add(new URLResolver()) {
+           name = 'deps'
+           addIvyPattern('[organisation]/[module]/ivy-[revision].xml')
+           addArtifactPattern('[organisation]/[module]/[type]s/[artifact]-[revision].[ext]')
+        }
+        */
+           
 		addConfiguration('ear');
 		
-		dir = new File(project.projectDir, '../TipOfTheDayBuild/deps');
-		addFlatDirResolver('deps', dir.absolutePath)
+		addMavenRepo()
 		
+		/*
+		addFlatDirResolver('deps', dir.absolutePath)
 		addMavenStyleRepo('geronimo', 'file:///I:/Work/Servers/geronimo/geronimo-tomcat6-javaee5-2.1.4/repository')
+		*/
 	}
 	
 }
