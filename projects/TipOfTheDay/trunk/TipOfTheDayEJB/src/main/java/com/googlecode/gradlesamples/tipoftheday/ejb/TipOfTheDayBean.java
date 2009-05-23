@@ -51,14 +51,12 @@ public class TipOfTheDayBean implements TipOfTheDayBeanLocal {
 				list.add(tip);
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error(e.getMessage(), e);
 		} finally {
 			try {
 				reader.close();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.warn(e.getMessage(), e);
 			}
 		}
 		return (TipOfTheDayVO[]) list.toArray(new TipOfTheDayVO[list.size()]);

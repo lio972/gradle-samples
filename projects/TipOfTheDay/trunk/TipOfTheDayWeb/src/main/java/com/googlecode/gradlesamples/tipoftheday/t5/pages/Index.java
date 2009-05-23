@@ -19,14 +19,13 @@ public class Index
 	@Service("TipOfTheDay")
 	private TipOfTheDayBeanLocal tipOfTheDayService;
 	
-	@SuppressWarnings("unused")
 	@Property(write=false)
 	private TipOfTheDayVO tipOfTheDay;
 	
 	@BeginRender
 	void setup() {
 		tipOfTheDay = tipOfTheDayService.nextTip();
-		// tipOfTheDay = new TipOfTheDayVO("test");
+		logger.info(tipOfTheDay.getTitle());
 	}
 	
 }
